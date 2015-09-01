@@ -1,0 +1,44 @@
+"use strict";
+
+var React = require('react');
+var Router = require('react-router');
+var Input = require('../common/textInput');
+
+var AuthorForm = React.createClass({
+  propTypes: {
+    author: React.PropTypes.object.isRequired,    //author object
+    onSave: React.PropTypes.func.isRequired,      //Save function
+    onChange: React.PropTypes.func.isRequired,    //input change handler
+    errors: React.PropTypes.object                //error listing for validation
+  },
+
+
+  render: function() {
+    return (
+      <form>
+        <h1>Manage Author</h1>
+        <Input
+          name="firstName"
+          label="First Name"
+          value={this.props.author.firstName}
+          onChange={this.props.onChange}
+          error={this.props.errors.firstName} />
+
+          <Input
+            name="lastName"
+            label="Last Name"
+            value={this.props.author.lastName}
+            onChange={this.props.onChange}
+            error={this.props.errors.lastName} />
+
+        <input
+            type="submit"
+            value="Save"
+            className="btn btn-default"
+            onClick={this.props.onSave} />
+      </form>
+    );
+  }
+});
+
+module.exports = AuthorForm;

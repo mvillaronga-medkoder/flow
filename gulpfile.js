@@ -20,7 +20,8 @@ var config = {
 		dist: './dist',
 		css: [
 			'node_modules/bootstrap/dist/css/bootstrap.min.css',
-			'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
+			'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+			'node_modules/toastr/toastr.css'
 		],
 		mainJs: './src/main.js'
 	}
